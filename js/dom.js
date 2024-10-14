@@ -13,6 +13,15 @@ document.getElementById('donate-btn-one').addEventListener('click',function(even
     const inputOne = parseFloat(document.getElementById('input-one').value);
     const noakhaliBalance = parseFloat(document.getElementById('noakhali-balance').innerText);
 
+    if(inputOne <= 0 || isNaN(inputOne)){
+        document.getElementById('invalid-one').classList.remove("hidden");
+        return;
+    }
+    if(inputOne > mainbalance){
+        alert("You Don't Have Enough Money For Donate");
+        return;
+    }
+
     const newmainBalance = mainbalance - inputOne;
     const newNoakhaliBalance = noakhaliBalance + inputOne;
     document.getElementById('main-balance').innerText = newmainBalance;
@@ -38,6 +47,15 @@ document.getElementById('donate-btn-two').addEventListener('click',function(even
     const inputTwo = parseFloat(document.getElementById('input-two').value);
     const feniBalance = parseFloat(document.getElementById('feni-balance').innerText);
 
+    if(inputTwo <= 0 || isNaN(inputTwo)){
+        document.getElementById('invalid-two').classList.remove("hidden");
+        return;
+    }
+    if(inputTwo > mainbalance){
+        alert("You Don't Have Enough Money For Donate");
+        return;
+    }
+
     const newmainBalance = mainbalance - inputTwo;
     const newfeniBalance = feniBalance + inputTwo;
     document.getElementById('main-balance').innerText = newmainBalance;
@@ -62,6 +80,15 @@ document.getElementById('donate-btn-three').addEventListener('click',function(ev
     const mainbalance = parseFloat(document.getElementById('main-balance').innerText);
     const inputThree = parseFloat(document.getElementById('input-three').value);
     const quotaBalance = parseFloat(document.getElementById('quota-balance').innerText);
+
+    if(inputThree <= 0 || isNaN(inputThree)){
+        document.getElementById('invalid-three').classList.remove("hidden");
+        return;
+    }
+    if(inputThree > mainbalance){
+        alert("You Don't Have Enough Money For Donate");
+        return;
+    }
 
     const newmainBalance = mainbalance - inputThree;
     const newQuotaBalance = quotaBalance + inputThree;
