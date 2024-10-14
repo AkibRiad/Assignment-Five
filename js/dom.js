@@ -1,3 +1,5 @@
+// blog button section 
 document.getElementById('blog-btn').addEventListener('click',function(){
-    window.
+    window.location.href='blog.html';
 })
+// blog button section end
